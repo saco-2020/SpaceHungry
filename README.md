@@ -5,7 +5,7 @@ debsimu:Space debris simulator
 
 # Resources
 
-出典：国土地理院ウェブサイト\n
+出典：国土地理院ウェブサイト
 
 https://maps.gsi.go.jp/development/tilejump.html#seamlessphoto/9/455/201
 
