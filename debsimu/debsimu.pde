@@ -51,6 +51,8 @@ void setup() {
   mode = 0;
   frame = 0;
 
+  surface.setTitle("Space debris simulator");
+
   //画像ロード
   img_fish = loadImage("fish.png");
   img_ground = loadImage("ground.jpg");
@@ -61,26 +63,29 @@ void setup() {
 //プレゼン用にマウス操作で表示切替
 void mousePressed() {
   mode++;
-  if (mode>9)mode=0;
+  if (mode>10)mode=0;
 
   int simu_tbl[]={
-    0, 0, 1, 0, 1, 1, 1, 1, 1, 1
+    0, 0, 1, 0, 1, 1, 1, 1, 1, 1,1
   };
   int ground_tbl[]={
-    0, 1, 1, 0, 0, 0, 0, 0, 0, 0
+    0, 1, 1, 0, 0, 0, 0, 0, 0, 0,0
   };
   int deb_tbl[]={
-    0, 0, 0, 0, 1, 1, 1, 1, 1, 1
+    0, 0, 0, 0, 1, 1, 1, 1, 1, 1,1
   };
   int sea_tbl[]={
-    0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+    0, 0, 0, 0, 0, 0, 0, 0, 1, 1,0
   };
   int fish_tbl[]={
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 1
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 1,0
   };
   int speed_tbl[]={
-    1, 1, 1, 1, 1, 5, 20, 1, 1, 1
+    1, 1, 1, 1, 1, 5, 20, 1, 1, 1,1
   };
+
+if(mode==10)debris_num_disparea*=10;
+if(mode==0)debris_num_disparea/=10;
 
   simu_mode = simu_tbl[mode];
   ground_mode = ground_tbl[mode];
@@ -114,6 +119,18 @@ void draw() {
     image(img_uki,disp_width/100/2-15, disp_height/100/2-50, 30,60);
   }
 
+  if(mode==0){
+    stroke(255, 255, 255);
+    strokeWeight(2);
+    line(disp_width/100/2 + 10, disp_height/100/2+10, disp_width/100/2 + 40, disp_height/100/2+20);
+    textSize(30);
+    text("ISS", disp_width/100/2 + 50, disp_height/100/2 + 50);
+  }
+  if(speedup!=1){
+    textSize(30);
+    text("X"+speedup, 900, 950);
+  }
+
   if (simu_mode==0) {
     return;    // not start
   }
@@ -139,11 +156,10 @@ void draw() {
         } else
         if(no<20000){
           debri.size = pow(10,(0-1.0*(no-5000)/(20000-5000)));
-        }
+        } else
         if(no<750000){
           debri.size = pow(10,(-1-1.0*(no-20000)/(750000-20000)));
-        }
-        if(no>=750000){
+        } else {
           debri.size = pow(10,(-2-1.0*(no-750000)/(150000000-750000)));
         }
 
