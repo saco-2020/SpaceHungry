@@ -10,10 +10,14 @@ A huge number of satellites in Earth's orbit support our day-to-day life on the 
 
 ## How I Addressed This Challenge
 
-Space debris is increasing year by year, and satellites are constantly under the threat of space debris. We have developed a system that allows us to learn about the threat of space debris through the experience of fishing, comparing space debris floating in space to fish in the ocean.<br>
-The system consists of two applications.<br>
-The first is a space debris simulator. It simulates the effect of more than 100 million pieces of debris, including tiny untraceable ones, and visualize them as fish swimming in the ocean. This allows us to learn about the threat of debris numbers.<br>
-The second is a virtual fishing application. Using a device with a modified reel, we can experience "fishing". The number of times you need to reel in to catch a target is proportional to the kinetic energy of the target. You can compare the kinetic energy of the debris to that of a swimming fish. This allows us to learn about the threat of debris impact.<br>
+Space debris is increasing year by year, and satellites are constantly under the threat of space debris. We have developed a system that allows us to learn about the threat of space debris through the experience of fishing, comparing space debris floating in space to fish in the ocean.
+
+The system consists of two applications.
+
+The first is a space debris simulator. It simulates the effect of more than 100 million pieces of debris, including tiny untraceable ones, and visualize them as fish swimming in the ocean. This allows us to learn about the threat of debris numbers.
+
+The second is a virtual fishing application. Using a device with a modified reel, we can experience "fishing". The number of times you need to reel in to catch a target is proportional to the kinetic energy of the target. You can compare the kinetic energy of the debris to that of a swimming fish. This allows us to learn about the threat of debris impact.
+
 Our goal is to create a trend in the world to get serious about reducing space debris through this system.<br>
 
 ## How I Developed This Project
